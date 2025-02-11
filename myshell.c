@@ -21,12 +21,17 @@ void execute_command(char *input)
     token = strtok(input, delim);
     if (token != NULL) 
     {
+        //If user enters "cd" command they should be able to change the current working directory
         if (strcmp(token, "cd") == 0) 
         {
             token = strtok(NULL, delim); // Get next part (directory path)
             change_directory(token);
         }
-        // 
+        if (strcmp(token, "help") == 0) 
+        {
+            token = strtok(NULL, delim); // Get next part (directory path)
+            change_directory(token);
+        }
         else 
         {
             printf("Command not recognized.\n");
