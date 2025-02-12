@@ -15,7 +15,6 @@ Group Member 5: Danial Shaikh (100698628)
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <conio.h>
 #include <dirent.h>
 
 // Access environment variables
@@ -123,12 +122,12 @@ void echo_comment(char *comment)
 // Displays the help.txt file from the system
 void display_help()
 {
-    system("more help.txt");
+    system("more readme.md");
 }
 
 void pause_shell()
 {
-    printf("Press Enter to continue...\n");
+    printf("\nPress Enter to continue...\n");
     while (getchar() != '\n')
         ;
 }

@@ -23,6 +23,8 @@ void list_directory(char *path);   // declaration of 'dir' function
 void list_environ();               // declaration of 'environ' function
 void echo_comment(char *comment);  // declaration of 'echo' function
 void display_help();               // declaration of 'help' function
-void pause_shell();
+void pause_shell();                // declaration of 'pause' function
+void clear_screen();               // declaration of 'clr' function
+
 
 #endif

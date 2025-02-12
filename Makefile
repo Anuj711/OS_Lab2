@@ -20,4 +20,4 @@ else
 endif
 
 clean:
-	$(RM) myshell.exe
+	$(RM) myshell
