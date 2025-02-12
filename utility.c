@@ -15,7 +15,10 @@ Group Member 5: Danial Shaikh (100698628)
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <conio.h>
 
+//Logic when the "cd command is inputed by user in shell
+//Allows user to enter the desired path as input for the function
 void change_directory(char *path) 
 {
     if (path == NULL) 
@@ -37,4 +40,11 @@ void change_directory(char *path)
             perror("myshell");
         }
     }
+}
+
+//Logic when the "clr" command is inputed by user in shell
+void clear_screen()
+{
+    // ANSI escape sequence to clear screen
+    printf("\033[H\033[J");  
 }

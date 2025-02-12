@@ -27,10 +27,17 @@ void execute_command(char *input)
             token = strtok(NULL, delim); // Get next part (directory path)
             change_directory(token);
         }
-        if (strcmp(token, "help") == 0) 
+        //If user enters "clr" command, it clears the screen
+        else if (strcmp(token, "clr") == 0) 
         {
-            token = strtok(NULL, delim); // Get next part (directory path)
-            change_directory(token);
+            token = strtok(NULL, delim);
+            clear_screen();
+        }
+        //If user enters "clr" command, it clears the screen
+        else if (strcmp(token, "clr") == 0) 
+        {
+            token = strtok(NULL, delim);
+            clear_screen();
         }
         else 
         {
