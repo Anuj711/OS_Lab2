@@ -18,6 +18,10 @@ Group Member 5: Danial Shaikh (100698628)
 #include <unistd.h> // Provides access to the POSIX operating system API
 
 //Function declarations
-void change_directory(char *path); // declaration of 'cd' function (cd function prototype)
+void change_directory(char *path); // declaration of 'cd' function
+void list_directory(char *path);  // declaration of 'dir' function
+void list_environ();  // declaration of 'environ' function
+void echo_comment(char *comment); // declaration of 'echo' function
+void display_help(); // declaration of 'help' function
 
 #endif

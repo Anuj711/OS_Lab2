@@ -40,6 +40,24 @@ void execute_command(char *input)
             token = strtok(NULL, delim); 
             list_directory(token);
         }
+        //If user enters "environ" command, list all the envrionment strings
+        else if (strcmp(token, "environ") == 0) 
+        {
+            list_environ();
+        }
+        //If user enters "echo <comment>" command, display the <comment> on the display followed by a new line
+        //Mulitple spaces/tabs are reduced into a single space
+        else if (strcmp(token, "echo") == 0) 
+        {
+            // Get rest of the input
+            char *comment = strtok(NULL, ""); 
+            echo_comment(comment);
+        }
+        //If user enters "help" command, display the help manual for the user and uses "more help.txt" to display the file one page at a time
+        else if (strcmp(token, "help") == 0) 
+        {
+            display_help();
+        }
         else 
         {
             printf("Command not recognized.\n");
