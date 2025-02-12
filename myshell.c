@@ -33,11 +33,12 @@ void execute_command(char *input)
             token = strtok(NULL, delim);
             clear_screen();
         }
-        //If user enters "clr" command, it clears the screen
-        else if (strcmp(token, "clr") == 0) 
+        //If user enters "dir <directory>" command, the contents of <directory> are displayed. If invalid directory passed, error message given
+        else if (strcmp(token, "dir") == 0) 
         {
-            token = strtok(NULL, delim);
-            clear_screen();
+            // Get directory name
+            token = strtok(NULL, delim); 
+            list_directory(token);
         }
         else 
         {
