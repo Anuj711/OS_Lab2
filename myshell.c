@@ -71,6 +71,10 @@ void execute_command(char *input)
         {
             exit(0); // Exit the program
         }
+        else if (strcmp(token, "exit") == 0)
+        {
+            exit(0); // Exit the program
+        }
         else
         {
             // If the command is not built-in, execute it as an external command
