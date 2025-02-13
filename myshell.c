@@ -20,7 +20,7 @@ Group Member 5: Danial Shaikh (100698628)
 void execute_command(char *input)
 {
     char *token;
-    char *delim = " \n"; // Delimiters to split the input by space and newline
+    char *delim = " \n";          // Delimiters to split the input by space and newline
     token = strtok(input, delim); // Tokenize the input string
 
     if (token != NULL)
@@ -29,13 +29,13 @@ void execute_command(char *input)
         if (strcmp(token, "cd") == 0)
         {
             token = strtok(NULL, delim); // Get the next part of the input (directory path)
-            change_directory(token); // Call function to change directory
+            change_directory(token);     // Call function to change directory
         }
         // If user enters "clr" command, it clears the terminal screen
         else if (strcmp(token, "clr") == 0)
         {
             token = strtok(NULL, delim); // Get next part (not needed for "clr")
-            clear_screen(); // Call function to clear the terminal screen
+            clear_screen();              // Call function to clear the terminal screen
         }
         // If user enters "dir <directory>" command, list the contents of the directory
         else if (strcmp(token, "dir") == 0)
@@ -101,7 +101,7 @@ void execute_command(char *input)
                 execvp(args[0], args);
 
                 perror("Command execution failed"); // If execvp fails, show an error
-                exit(1); // Exit the child process with an error status
+                exit(1);                            // Exit the child process with an error status
             }
             else
             {
@@ -117,6 +117,12 @@ int main(int argc, char *argv[])
 {
     char input[1024]; // Buffer for user input
     FILE *batchFile = NULL;
+
+    char shell_path[1024];
+    if (realpath(argv[0], shell_path))
+    {
+        setenv("shell", shell_path, 1);
+    }
 
     // Check if a batch file is provided as a command-line argument
     if (argc > 1)
@@ -141,7 +147,7 @@ int main(int argc, char *argv[])
         }
         else
         {
-            printf("MyShell> "); // Prompt for input if not in batch mode
+            printf("MyShell> ");                     // Prompt for input if not in batch mode
             if (!fgets(input, sizeof(input), stdin)) // Read input from stdin (user)
             {
                 break; // Exit loop if no input is provided
