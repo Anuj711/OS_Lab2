@@ -12,6 +12,8 @@ all: myshell
 
 myshell: myshell.c utility.c
 	gcc -o myshell myshell.c utility.c
+	chmod u+w myshell
+
 
 ifeq ($(OS),Windows_NT)
     RM = del /F /Q
