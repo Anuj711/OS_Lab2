@@ -1,7 +1,0 @@
-clr
-cd 
-cd /mnt/c/Users
-cd
-dir /mnt/c/Users/anujs
-echo Hello, World!
-pause
